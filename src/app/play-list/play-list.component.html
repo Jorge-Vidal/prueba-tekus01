@@ -1,6 +1,11 @@
 <section class="play-list">
-<div class="row">
-  <app-card-content class="col-sm-4 col-md-2">
-  </app-card-content>
+
+
+<div class="row" dnd-sortable-container [sortableData]="cards">
+  <app-card-content class="col-sm-4 col-md-2" *ngFor="let card of cards | sort: 'ItemOrder' ; let i = index" (deleteCardEvent)="openDeleteCardModal(card)" [index]="i"  [item]="card"></app-card-content>
 </div>
 </section>
+
+
+
+<app-delete-modal *ngIf="openModalDelete" [card]="currentDeleteCard" (deleteCardConfirmEvent)="deleteCard(currentDeleteCard)" (closeDeleteCardModalEvent)="closeDeleteCardModal()"></app-delete-modal>

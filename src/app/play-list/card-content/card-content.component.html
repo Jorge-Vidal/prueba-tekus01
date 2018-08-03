@@ -1,34 +1,30 @@
 
+<div class="card"  dnd-sortable [sortableIndex]="index" (onDropSuccess)="onMove(item, item.ItemOrder)" [ngClass]="{'disabled': !item.Active}">
+  <div class="content-img">
+    <div class="fab" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit"><i class="fa fa-edit "> </i></div>
 
-<div class="card">
-<div class="content-img">
-  <div class="fab"><i class="fa fa-edit "> </i></div>
-
-<img class="left" src="../../assets/img/imgprueba.png"/></div>
-<div class="content-text">
-<i class="type-doc fa fa-video" ></i>
-  <h1>Name Item </h1>
-</div>
-  <div class="card-footer">
-
-
-   <span class="order">
-    <h2>1</h2>
-  </span>
+    <img class="left" src="{{item.MediaPreviewId}}"/></div>
+    <div class="content-text">
+      <i class="type-doc fa " [ngClass]="validateTemplateType(item.TemplateType)"></i>
+      <h1>{{item.Description}} {{index}}</h1>
+    </div>
+    <div class="card-footer">
 
 
-
+     <span class="order">
+      <h2>{{item.ItemOrder}}</h2>
+    </span>
     <ul>
-  <li>
-  <label class="switch switch-default switch-pill switch-primary mr-2">
-  <input  id="active" name="active" type="checkbox" class="switch-input" checked="true">
-    <span class="switch-label"></span>
-  <span class="switch-handle"></span>
-  </label>
-</li>
-  <li><i class="fa fa-trash "></i></li>
-</ul>
+      <li>
+        <label class="switch switch-default switch-pill switch-primary mr-2">
+          <input (click)="cardToggleActive(item)" [(ngModel)]="item.Active" [ngModelOptions]="{standalone: true}" id="active" name="active" type="checkbox" class="switch-input" checked="{{item.Active}}">
+          <span class="switch-label"></span>
+          <span class="switch-handle"></span>
+        </label>
+      </li>
+      <li (click)="deleteCard(item)" class="item" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"><i class="fa fa-trash "></i></li>
+    </ul>
 
 
-          </div>
-          </div>
+  </div>
+</div>

@@ -241,3 +241,7 @@ position: absolute;
     background: #fff !important;
     border-color: #4272d7;
 }
+
+.card.disabled{
+    background: red;
+}
