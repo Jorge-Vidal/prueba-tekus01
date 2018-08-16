@@ -10,6 +10,7 @@ import { ArraySortPipe } from './play-list/sort.pipe';
 import { CardService } from './services/card-service/card.service';
 import { DndModule } from 'ng2-dnd';
 import { DeleteModalComponent } from './play-list/delete-modal/delete-modal.component';
+import { EditModalComponent } from './play-list/edit-modal/edit-modal.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DeleteModalComponent } from './play-list/delete-modal/delete-modal.comp
     PlayListComponent,
     CardContentComponent,
     ArraySortPipe,
-    DeleteModalComponent
+    DeleteModalComponent,
+    EditModalComponent
     
   ],
   imports: [

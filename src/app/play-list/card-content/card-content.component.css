@@ -8,11 +8,9 @@ body {
 
 /* card */
 .card {
-  width: 100%;
-  background-color: #FFF;
   margin: 15px;
 width: 100%;
-background-color: #FFF;
+background-color: rgba(255,255,255,1);
 box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.5);
@@ -243,5 +241,8 @@ position: absolute;
 }
 
 .card.disabled{
-    background: red;
+    background-color: rgba(0,0,0,.03);
+}
+.card.disabled .content-img img ,.card.disabled .content-text{
+    opacity: .2;
 }
